@@ -1626,6 +1626,15 @@ p {
   color-scheme: dark;
 }
 
+.form-grid select option {
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.form-grid select option:disabled {
+  color: #667083;
+}
+
 .form-grid input:focus,
 .form-grid select:focus,
 .form-grid textarea:focus {
