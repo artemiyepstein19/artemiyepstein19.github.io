@@ -1,0 +1,80 @@
+name: Update EUR to RUB rate
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-eur-rub-rate
+  cancel-in-progress: false
+
+jobs:
+  update-rate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the website
+        uses: actions/checkout@v6
+
+      - name: Fetch and validate the latest rate
+        env:
+          RATE_ENDPOINT: https://open.er-api.com/v6/latest/EUR
+        run: |
+          response="$(curl --fail --silent --show-error "$RATE_ENDPOINT")"
+          result="$(jq -r '.result' <<<"$response")"
+          rate="$(jq -r '.rates.RUB' <<<"$response")"
+          updated_unix="$(jq -r '.time_last_update_unix' <<<"$response")"
+
+          if [[ "$result" != "success" ]] || ! [[ "$rate" =~ ^[0-9]+([.][0-9]+)?$ ]]; then
+            echo "The exchange-rate response was not valid."
+            exit 1
+          fi
+
+          updated_date="$(date -u -d "@$updated_unix" +%F)"
+          export EUR_RUB_RATE="$rate"
+          export EUR_RUB_DATE="$updated_date"
+
+          python3 - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          page = Path("ru/ai-development/index.html")
+          content = page.read_text(encoding="utf-8")
+          rate = float(os.environ["EUR_RUB_RATE"])
+          date = os.environ["EUR_RUB_DATE"]
+
+          updated, rate_count = re.subn(
+              r'data-eur-rate="[^"]+"',
+              f'data-eur-rate="{rate:.6f}"',
+              content,
+              count=1,
+          )
+          updated, date_count = re.subn(
+              r'data-rate-date="[^"]+"',
+              f'data-rate-date="{date}"',
+              updated,
+              count=1,
+          )
+
+          if rate_count != 1 or date_count != 1:
+              raise SystemExit("Could not find the exchange-rate attributes.")
+
+          page.write_text(updated, encoding="utf-8")
+          PY
+
+      - name: Commit the updated rate
+        run: |
+          if git diff --quiet -- ru/ai-development/index.html; then
+            echo "The published rate is already current."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ru/ai-development/index.html
+          git commit -m "Update EUR to RUB rate"
+          git push

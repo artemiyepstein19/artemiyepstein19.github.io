@@ -47,6 +47,44 @@
     });
   });
 
+  document.querySelectorAll("[data-eur-rate]").forEach((section) => {
+    const rate = Number(section.dataset.eurRate);
+    const rateDate = section.dataset.rateDate;
+    if (!Number.isFinite(rate) || rate <= 0) return;
+
+    const formatRubles = new Intl.NumberFormat("ru-RU", {
+      maximumFractionDigits: 0,
+    });
+    const roundedRubles = (euros) => Math.round((euros * rate) / 100) * 100;
+
+    section.querySelectorAll("[data-rub-price]").forEach((node) => {
+      const minimum = Number(node.dataset.eurMin);
+      const maximum = Number(node.dataset.eurMax);
+      if (!Number.isFinite(minimum) || !Number.isFinite(maximum)) return;
+
+      const plus = node.dataset.plus === "true" ? "+" : "";
+      node.textContent = `≈ ${formatRubles.format(
+        roundedRubles(minimum),
+      )}–${formatRubles.format(roundedRubles(maximum))}${plus} ₽`;
+    });
+
+    const caption = section.querySelector("[data-rate-caption]");
+    if (caption && rateDate) {
+      const formattedRate = new Intl.NumberFormat("ru-RU", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }).format(rate);
+      const formattedDate = new Intl.DateTimeFormat("ru-RU", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        timeZone: "UTC",
+      }).format(new Date(`${rateDate}T00:00:00Z`));
+
+      caption.textContent = `Рублёвый эквивалент рассчитан по курсу 1 € = ${formattedRate} ₽ на ${formattedDate} и обновляется автоматически раз в сутки.`;
+    }
+  });
+
   document.querySelectorAll("[data-contact-form]").forEach((form) => {
     const submit = form.querySelector('button[type="submit"]');
     const status = form.querySelector("[data-form-status]");

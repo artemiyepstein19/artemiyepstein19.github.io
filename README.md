@@ -16,6 +16,16 @@ Bilingual static website for Artemiy Epstein with two service directions:
 
 Shared styles and interactions are in `assets/styles.css` and `assets/site.js`.
 
+## Automatic EUR/RUB conversion
+
+The Russian AI development page shows each indicative budget in euros and
+roubles. The conversion is calculated from the rate stored on the pricing
+section in `ru/ai-development/index.html`.
+
+`.github/workflows/update-eur-rub-rate.yml` refreshes the EUR/RUB rate once per
+day through ExchangeRate-API and commits the updated rate and date to `main`.
+Visitors do not make requests to the exchange-rate provider from their browser.
+
 ## Editing content
 
 The website has no build step. Edit the relevant `index.html` file directly.

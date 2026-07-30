@@ -1036,6 +1036,134 @@ p {
   font-size: 13px;
 }
 
+.budget-list {
+  overflow: hidden;
+  border: 1px solid #d9dce2;
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 18px 55px rgba(26, 38, 58, 0.06);
+}
+
+.budget-row {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) minmax(220px, 0.42fr);
+  gap: 24px;
+  align-items: center;
+  min-height: 165px;
+  padding: 30px 34px;
+  border-bottom: 1px solid #e1e3e7;
+}
+
+.budget-row:last-child {
+  border-bottom: 0;
+}
+
+.budget-row-featured {
+  background: var(--navy-2);
+  color: var(--white);
+}
+
+.budget-index {
+  align-self: start;
+  color: #8a93a1;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.budget-copy h3 {
+  max-width: 620px;
+  margin: 0 0 9px;
+  font-size: 23px;
+  font-weight: 620;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
+}
+
+.budget-copy p {
+  max-width: 650px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.62;
+}
+
+.budget-row-featured .budget-copy p {
+  color: #b9c2d0;
+}
+
+.budget-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-self: end;
+  width: 100%;
+  max-width: 270px;
+  padding-left: 28px;
+  border-left: 1px solid #d9dce2;
+}
+
+.budget-row-featured .budget-amount {
+  border-color: var(--line-dark);
+}
+
+.budget-amount small {
+  color: #7c8798;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.budget-amount strong {
+  margin-top: 8px;
+  font-size: clamp(25px, 2.4vw, 36px);
+  font-weight: 650;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.rub-price {
+  margin-top: 8px;
+  color: #4f6e5a;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+.budget-row-featured .rub-price {
+  color: #9fd5ad;
+}
+
+.budget-meta {
+  max-width: 900px;
+  margin-top: 25px;
+}
+
+.budget-note,
+.rate-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.rate-note {
+  margin-top: 9px;
+  font-size: 11px;
+}
+
+.rate-note a {
+  margin-left: 6px;
+  color: #536d9f;
+  text-decoration: underline;
+  text-decoration-color: #b8c2d7;
+  text-underline-offset: 3px;
+}
+
 .metrics-strip {
   padding: 40px 0;
   border-bottom: 1px solid #c9d8cd;
@@ -1979,6 +2107,30 @@ p {
   .service-card {
     min-height: 0;
     padding: 27px;
+  }
+
+  .budget-row {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 18px;
+    min-height: 0;
+    padding: 26px;
+  }
+
+  .budget-amount {
+    grid-column: 1 / -1;
+    justify-self: start;
+    max-width: none;
+    padding: 19px 0 0;
+    border-top: 1px solid #d9dce2;
+    border-left: 0;
+  }
+
+  .budget-row-featured .budget-amount {
+    border-color: var(--line-dark);
+  }
+
+  .budget-amount strong {
+    font-size: clamp(28px, 8.4vw, 36px);
   }
 
   .metrics-grid {
