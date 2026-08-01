@@ -63,9 +63,12 @@
       if (!Number.isFinite(minimum) || !Number.isFinite(maximum)) return;
 
       const plus = node.dataset.plus === "true" ? "+" : "";
-      node.textContent = `≈ ${formatRubles.format(
-        roundedRubles(minimum),
-      )}–${formatRubles.format(roundedRubles(maximum))}${plus} ₽`;
+      const minimumRubles = formatRubles.format(roundedRubles(minimum));
+      const maximumRubles = formatRubles.format(roundedRubles(maximum));
+      node.textContent =
+        minimum === maximum
+          ? `≈ ${minimumRubles}${plus} ₽`
+          : `≈ ${minimumRubles}–${maximumRubles}${plus} ₽`;
     });
 
     const caption = section.querySelector("[data-rate-caption]");

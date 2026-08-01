@@ -5,6 +5,14 @@ Bilingual static website for Artemiy Epstein with two service directions:
 - Operations & Project Management
 - AI-Powered Websites & Business Software
 
+The current public fixed-scope offers are:
+
+- Operational Audit Sprint — €450, 50/50, 7 business days;
+- Template-Based One-Page Website Sprint — €300, 50/50, 5 business days.
+
+Other capabilities are shown without public price ranges and require a
+separate discovery and written scope.
+
 ## Site structure
 
 | Route                                        | Purpose                                    |
@@ -18,9 +26,9 @@ Shared styles and interactions are in `assets/styles.css` and `assets/site.js`.
 
 ## Automatic EUR/RUB conversion
 
-The Russian AI development page shows each indicative budget in euros and
-roubles. The conversion is calculated from the rate stored on the pricing
-section in `ru/ai-development/index.html`.
+The Russian AI development page shows the fixed €300 Website Sprint price in
+euros and roubles. The conversion is calculated from the rate stored on the
+pricing section in `ru/ai-development/index.html`.
 
 `.github/workflows/update-eur-rub-rate.yml` refreshes the EUR/RUB rate once per
 day through ExchangeRate-API and commits the updated rate and date to `main`.
@@ -71,6 +79,7 @@ DNS records are managed outside this repository. Do not change them for ordinary
 
 - Public links to additional completed website or software cases.
 - Verified results for digital product projects, if available.
-- Final package prices for website and software services, if standardized.
+- Additional package prices only after the corresponding scopes are standardized
+  and approved for public use.
 - Legal registration details if the owner decides to publish them.
 - Analytics and cookie information only if analytics is intentionally added.
