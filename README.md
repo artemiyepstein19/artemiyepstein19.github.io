@@ -20,6 +20,7 @@ separate discovery and written scope.
 | `/` and `/ru/`                               | Service hub and personal positioning       |
 | `/operations/` and `/ru/operations/`         | Operations and project management services |
 | `/ai-development/` and `/ru/ai-development/` | Website and business software services     |
+| `/website-sprint/`                           | English Website Sprint offer and proof      |
 | `/privacy-policy/` and `/ru/privacy-policy/` | Privacy information                        |
 
 Shared styles and interactions are in `assets/styles.css` and `assets/site.js`.
