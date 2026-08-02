@@ -2255,10 +2255,6 @@ p {
    Scope: typography, spacing, card density, and responsive behavior only.
    Approved copy, prices, forms, and global navigation structure are unchanged. */
 
-body {
-  overflow-x: clip;
-}
-
 .section {
   padding: clamp(68px, 7vw, 88px) 0;
 }
