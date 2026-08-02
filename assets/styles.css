@@ -2249,3 +2249,409 @@ p {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* P0 LAYOUT AND RESPONSIVE PASS
+   Scope: typography, spacing, card density, and responsive behavior only.
+   Approved copy, prices, forms, and global navigation structure are unchanged. */
+
+body {
+  overflow-x: clip;
+}
+
+.section {
+  padding: clamp(68px, 7vw, 88px) 0;
+}
+
+.section-compact {
+  padding: clamp(52px, 5.5vw, 68px) 0;
+}
+
+.brand-text small,
+.language-switch a,
+.language-switch span,
+.visual-head,
+.visual-foot,
+.system-path small,
+.path-tags span,
+.direction-number,
+.value-card span,
+.problem-card > span,
+.process-card > span,
+.format-card > span,
+.case-card > span,
+.service-topline > span,
+.service-topline > em,
+.service-details small,
+.price small,
+.budget-index,
+.budget-amount small,
+.metrics-caption,
+.outcome-index,
+.outcome-metric span,
+.panel-label,
+.contact-details small {
+  font-size: 11px;
+}
+
+.primary-nav > a:not(.button) {
+  font-size: 14px;
+}
+
+.eyebrow,
+.kicker {
+  margin-bottom: 18px;
+  font-size: 12px;
+}
+
+.hero {
+  min-height: 0;
+  padding: 132px 0 80px;
+}
+
+.hero-grid {
+  gap: clamp(42px, 5vw, 60px);
+}
+
+.hero h1 {
+  font-size: clamp(48px, 4.8vw, 70px);
+  line-height: 1.03;
+}
+
+.hub-hero h1 {
+  font-size: clamp(50px, 5vw, 74px);
+}
+
+.hero-lead {
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: 1.58;
+}
+
+.hero-positioning {
+  font-size: 15px;
+}
+
+.trust-line {
+  font-size: 12px;
+  letter-spacing: 0.055em;
+}
+
+.system-visual {
+  min-height: 0;
+}
+
+.system-path {
+  min-height: 0;
+  padding: 24px;
+}
+
+.system-path p {
+  font-size: 14px;
+}
+
+.section-heading {
+  margin-bottom: 42px;
+}
+
+.section-heading h2,
+.about-copy h2,
+.contact-copy h2 {
+  font-size: clamp(36px, 3.8vw, 52px);
+  line-height: 1.1;
+}
+
+.section-heading > p:not(.kicker),
+.about-copy > p:not(.kicker),
+.contact-copy > p:not(.kicker) {
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.split-heading {
+  gap: clamp(36px, 5vw, 58px);
+}
+
+.direction-card {
+  min-height: 0;
+  padding: 32px;
+}
+
+.direction-card h3 {
+  margin: 34px 0 14px;
+  font-size: clamp(29px, 3vw, 34px);
+}
+
+.direction-card > p {
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+.direction-list {
+  margin: 18px 0 26px;
+}
+
+.direction-list li,
+.service-details li {
+  font-size: 14px;
+}
+
+.value-card,
+.problem-card,
+.process-card,
+.format-card,
+.case-card {
+  min-height: 0;
+  padding: 26px;
+}
+
+.value-card h3,
+.problem-card h3,
+.process-card h3,
+.format-card h3,
+.case-card h3 {
+  margin: 28px 0 10px;
+}
+
+.value-card p,
+.problem-card p,
+.process-card p,
+.format-card p,
+.case-card p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.service-card {
+  min-height: 0;
+  padding: 30px;
+}
+
+.service-card > p {
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+.pricing-note,
+.budget-note,
+.outcome-row p,
+.brand-disclaimer {
+  font-size: 14px;
+}
+
+.budget-row {
+  min-height: 0;
+  padding: 24px 30px;
+}
+
+.budget-copy p {
+  font-size: 15px;
+}
+
+.rate-note {
+  font-size: 12px;
+}
+
+.metrics-grid span {
+  font-size: 13px;
+}
+
+.outcome-row {
+  padding: 24px 0;
+}
+
+.about-grid,
+.contact-grid {
+  gap: clamp(42px, 5vw, 62px);
+}
+
+.about-panel {
+  min-height: 440px;
+}
+
+.about-monogram {
+  margin-top: 45px;
+}
+
+.about-facts span {
+  font-size: 13px;
+}
+
+.case-card h3 {
+  margin-top: 34px;
+}
+
+.contact-section {
+  padding: clamp(72px, 7vw, 88px) 0;
+}
+
+.contact-copy h2 {
+  font-size: clamp(38px, 4vw, 54px);
+}
+
+.form-grid label > span,
+.privacy-check,
+.privacy-aside span,
+.privacy-aside a {
+  font-size: 13px;
+}
+
+.form-grid label > span em,
+.form-note,
+.form-status {
+  font-size: 12px;
+}
+
+.footer-grid > div > strong,
+.footer-grid > div > span,
+.footer-grid p,
+.footer-grid a {
+  font-size: 12px;
+}
+
+.privacy-body p,
+.privacy-body li {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+@media (max-width: 1120px) {
+  .hero {
+    padding: 112px 0 72px;
+  }
+
+  .hero-grid {
+    gap: 40px;
+  }
+
+  .system-visual {
+    max-width: 760px;
+  }
+
+  .direction-card {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  body {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-compact {
+    padding: 48px 0;
+  }
+
+  .hero {
+    padding: 104px 0 58px;
+  }
+
+  .hero h1,
+  .hub-hero h1 {
+    font-size: clamp(38px, 10.5vw, 50px);
+    line-height: 1.04;
+  }
+
+  html[lang="ru"] .hero h1 {
+    font-size: clamp(35px, 9.3vw, 46px);
+  }
+
+  .hero-lead {
+    font-size: 17px;
+  }
+
+  .section-heading {
+    margin-bottom: 32px;
+  }
+
+  .section-heading h2,
+  .about-copy h2,
+  .contact-copy h2 {
+    font-size: clamp(32px, 9vw, 42px);
+  }
+
+  html[lang="ru"] .section-heading h2,
+  html[lang="ru"] .about-copy h2,
+  html[lang="ru"] .contact-copy h2 {
+    font-size: clamp(30px, 8.5vw, 40px);
+  }
+
+  .section-heading > p:not(.kicker),
+  .about-copy > p:not(.kicker),
+  .contact-copy > p:not(.kicker) {
+    font-size: 16px;
+  }
+
+  .direction-card,
+  .service-card,
+  .value-card,
+  .problem-card,
+  .process-card,
+  .format-card,
+  .case-card {
+    padding: 24px;
+  }
+
+  .direction-card h3 {
+    margin-top: 28px;
+    font-size: 28px;
+  }
+
+  .value-card h3,
+  .problem-card h3,
+  .process-card h3,
+  .format-card h3,
+  .case-card h3 {
+    margin-top: 22px;
+  }
+
+  .about-panel {
+    min-height: 380px;
+    padding: 26px;
+  }
+
+  .about-monogram {
+    width: 130px;
+    height: 130px;
+    margin-top: 34px;
+  }
+
+  .contact-section {
+    padding: 64px 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .brand-text small {
+    max-width: 128px;
+    font-size: 10px;
+    letter-spacing: 0.07em;
+  }
+
+  html[lang="ru"] .brand-text small {
+    max-width: 112px;
+  }
+
+  .system-path {
+    padding: 20px;
+  }
+
+  .system-path p {
+    font-size: 14px;
+  }
+
+  .visual-head,
+  .visual-foot {
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+
+  .form-panel {
+    padding: 20px;
+  }
+}
