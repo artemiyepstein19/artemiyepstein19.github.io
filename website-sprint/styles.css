@@ -1404,3 +1404,305 @@ h3 {
     animation-iteration-count: 1 !important;
   }
 }
+
+
+/* P0 WEBSITE SPRINT LAYOUT AND RESPONSIVE PASS
+   Scope: typography, spacing, card density, and responsive behavior only.
+   Approved copy, price, form, and navigation structure are unchanged. */
+
+body {
+  min-width: 0;
+  overflow-x: visible;
+}
+
+.brand-copy small,
+.build-card-header,
+.build-footer,
+.screen-top small,
+.screen-body p,
+.direct-contact small {
+  font-size: 11px;
+}
+
+.primary-nav > a:not(.button) {
+  font-size: 14px;
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+}
+
+.hero {
+  padding: 72px 0 68px;
+}
+
+.hero-grid {
+  gap: clamp(42px, 5vw, 58px);
+}
+
+h1 {
+  margin-bottom: 22px;
+  font-size: clamp(3rem, 4.9vw, 4.5rem);
+  line-height: 1.03;
+}
+
+h2 {
+  margin-bottom: 18px;
+  font-size: clamp(2.25rem, 3.8vw, 3.5rem);
+  line-height: 1.08;
+}
+
+.hero-lead {
+  font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+  line-height: 1.58;
+}
+
+.hero-note {
+  margin-bottom: 24px;
+}
+
+.hero-facts {
+  margin-top: 30px;
+}
+
+.hero-facts strong {
+  font-size: 14px;
+}
+
+.hero-facts span {
+  font-size: 12px;
+}
+
+.screen-body {
+  min-height: 340px;
+  padding: 40px 34px 30px;
+}
+
+.screen-top small {
+  font-size: 10px;
+}
+
+.screen-button {
+  font-size: 11px;
+}
+
+.screen-grid {
+  margin-top: 30px;
+}
+
+.screen-grid span {
+  height: 66px;
+}
+
+.split-heading {
+  gap: clamp(36px, 5vw, 56px);
+  margin-bottom: 40px;
+}
+
+.section-intro {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+#fit,
+#included,
+#process,
+#terms,
+#contact {
+  padding: clamp(68px, 7vw, 88px) 0;
+}
+
+.problem-card {
+  min-height: 0;
+  padding: 26px;
+}
+
+.problem-card > span {
+  margin-bottom: 30px;
+  font-size: 11px;
+}
+
+.problem-card p,
+.scope-list p,
+.scope-summary li,
+.process-grid article > p:last-child,
+.terms-copy > p:not(.eyebrow):not(.change-note) {
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+.fit-strip span,
+.price-panel dt,
+.price-panel dd,
+.proof-label span,
+.proof-checks li {
+  font-size: 13px;
+}
+
+.included-layout {
+  gap: 28px;
+}
+
+.scope-list article {
+  padding: 20px 0;
+}
+
+.scope-list article > span {
+  font-size: 12px;
+}
+
+.scope-summary,
+.price-panel,
+.form-panel {
+  padding: 30px;
+}
+
+.process-grid article {
+  min-height: 0;
+  padding: 26px;
+}
+
+.process-number {
+  margin-bottom: 34px;
+  font-size: 11px;
+}
+
+.terms-grid,
+.proof-grid {
+  gap: clamp(42px, 5vw, 62px);
+}
+
+.price {
+  font-size: clamp(4rem, 7vw, 6.4rem);
+}
+
+.exclusion-grid li,
+.change-note {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.proof-label strong,
+.form-grid label > span {
+  font-size: 12px;
+}
+
+.privacy-check {
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.form-note {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.site-footer {
+  min-height: 0;
+  font-size: 12px;
+}
+
+@media (max-width: 1120px) {
+  .hero {
+    padding: 64px 0 60px;
+  }
+
+  .hero-grid {
+    gap: 40px;
+  }
+
+  .build-card {
+    max-width: 720px;
+  }
+
+  .primary-nav > a:not(.button) {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 900px) {
+  .split-heading {
+    margin-bottom: 32px;
+  }
+
+  .problem-card > span {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero {
+    padding: 54px 0 52px;
+  }
+
+  h1 {
+    font-size: clamp(2.45rem, 11.5vw, 3.25rem);
+    line-height: 1.04;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    line-height: 1.08;
+  }
+
+  #fit,
+  #included,
+  #process,
+  #terms,
+  #contact {
+    padding: 60px 0;
+  }
+
+  .hero-facts {
+    margin-top: 24px;
+  }
+
+  .screen-body {
+    min-height: 280px;
+    padding: 30px 22px 24px;
+  }
+
+  .screen-grid {
+    margin-top: 24px;
+  }
+
+  .problem-card,
+  .process-grid article,
+  .form-panel,
+  .price-panel,
+  .scope-summary {
+    padding: 24px;
+  }
+
+  .process-number {
+    margin-bottom: 24px;
+  }
+
+  .proof-grid {
+    gap: 40px;
+  }
+
+  .price {
+    font-size: clamp(3.8rem, 20vw, 5.5rem);
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-copy small {
+    max-width: 120px;
+    font-size: 10px;
+    letter-spacing: 0.07em;
+  }
+
+  .build-card-header,
+  .build-footer {
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+
+  .fit-strip {
+    padding: 18px;
+  }
+}
